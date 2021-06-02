@@ -21,7 +21,7 @@ export class NgInterswitchComponent implements OnInit {
   @Input() payItemID: string;
   @Input() payItemName: string;
   @Input() transactionReference: string;
-  @Input() amount: number;
+  @Input() amount: string;
   @Input() currency: number;
   @Input() customerName: string;
   @Input() customerEmail: string;

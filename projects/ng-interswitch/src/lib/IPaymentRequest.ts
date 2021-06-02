@@ -24,7 +24,7 @@ export interface IPaymentRequest{
     /**
      * Amount of the item being paid for (in koboa)
      */
-    amount: number;
+    amount: string;
 
     /**
      * ISO 4217 code of the currency being used. Naira(566) is the default
