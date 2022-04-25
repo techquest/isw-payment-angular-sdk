@@ -128,7 +128,7 @@ export class NgInterswitchComponent implements OnInit {
 
 
     
-    await this._ngInterswitchService.loadAPI();
+    await this._ngInterswitchService.loadAPI(paymentRequest.mode.toLowerCase());
 
     window.webpayCheckout(paymentRequest);
   }

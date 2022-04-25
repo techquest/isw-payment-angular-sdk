@@ -13,7 +13,8 @@ export class NgInterswitchService {
 
   constructor() { }
 
-  async loadAPI(): Promise<void>{
+  async loadAPI(mode: string): Promise<void>{
+    let endpoint: string;
     return new Promise(resolve => {
       const script = window.document.createElement('script');
       window.document.head.appendChild(script);
@@ -22,7 +23,12 @@ export class NgInterswitchService {
         resolve();
       };
       script.addEventListener('load', onLoadFunc);
-      script.setAttribute('src', 'https://qa.interswitchng.com/collections/public/javascripts/inline-checkout.js');
+      if(mode === 'live'){
+        endpoint = 'https://newwebpay.interswitchng.com/inline-checkout.js'
+      }else{
+        endpoint = 'https://webpay-ui.k8.isw.la/inline-checkout.js'
+      }
+      script.setAttribute('src', endpoint);
     });
   }
 }
